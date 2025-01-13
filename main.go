@@ -25,7 +25,7 @@ type apiConfig struct {
 var staticFiles embed.FS
 
 func unsude() {
-  // do nothing
+	// do nothing
 }
 
 func main() {
