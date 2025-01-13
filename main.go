@@ -25,10 +25,6 @@ type apiConfig struct {
 //go:embed static/*
 var staticFiles embed.FS
 
-func unsude() {
-	// do nothing
-}
-
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
@@ -94,9 +90,9 @@ func main() {
 
 	router.Mount("/v1", v1Router)
 	srv := &http.Server{
-		Addr:    ":" + port,
-		Handler: router,
-    ReadHeaderTimeout: time.Second * 10,
+		Addr:              ":" + port,
+		Handler:           router,
+		ReadHeaderTimeout: time.Second * 10,
 	}
 
 	log.Printf("Serving on port: %s\n", port)
